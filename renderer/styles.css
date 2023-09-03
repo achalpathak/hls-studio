@@ -1,0 +1,171 @@
+body{
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* background-color:azure; */
+  background-color: #121419;
+  padding: 0 5rem;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+color: white;
+}
+.logo{
+  padding: 1rem 0;
+  align-self: center;
+}
+
+.logoImg{
+  -webkit-user-drag: none;
+}
+
+.reset{
+  position: absolute;
+  top:10px;
+  right:2rem;
+}
+
+.inputFileContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.file-input{
+  text-align: center;
+}
+.inputFilePath {
+  font-size: 1.1rem;
+  /* margin-left: 2.2rem; */
+  padding: 8px 1rem !important;
+  background-color: #1A1C23;
+}
+.inputFolderPath {
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+.outputFolderContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+[type="checkbox"]+span:not(.lever){
+  padding-left: 25px;
+  padding-right: 20px;
+}
+.caret{
+  color:white;
+}
+
+/* preset toggle color */
+[type="checkbox"].filled-in:checked+span:not(.lever):after{
+  background-color: #1e88e5;
+}
+
+
+
+.select-dropdown.dropdown-content li:hover{
+  background-color:#80cbc4;
+}
+.select-wrapper input.select-dropdown{
+  color:#1e88e5;
+  font-weight: 600;
+}
+.select-wrapper .caret{
+  filter: invert(100%) sepia(26%) saturate(126%) hue-rotate(96deg) brightness(103%) contrast(101%);
+}
+.dropdown-content li>a, .dropdown-content li>span{
+  color:#1e88e5;
+}
+.switch label input[type=checkbox]:checked+.lever:after{
+  background-color: #1e88e5;
+}
+.startButtonContainer{
+  display:flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+
+
+.switch > h6{
+  display: inline;
+}
+.progressContainer{
+  display: none;
+  flex-direction: column;
+  width: 96%;
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
+  padding: 0 5rem;
+  left: 0px;
+}
+.progressDetails{
+  display: flex;
+  justify-content: center;
+}
+.progressDetails >h6{
+  display: inline;
+}
+.progress{
+  height: 20px;
+}
+.presetsOption{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100% !important;
+  text-align: center;
+}
+
+.presetBox{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.encodingContainer{
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 100% !important;
+  text-align: center;
+}
+.encodingContainer > div > h6{
+    display: inline;
+}
+.switch{
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.toast-error{
+  background-color: rgb(184, 52, 52) !important;
+}
+.toast-success{
+  background-color: rgb(13, 187, 45) !important;
+}
+
+
+/* disabled changes for select */
+.select-wrapper input.select-dropdown:disabled{
+  color: #DFDFDF !important;
+  border-bottom: 1px solid #9e9e9e;
+}
+
+.smooth-width-transition {
+  transition: width 0.3s ease; /* Adjust the duration and timing function as needed */
+}

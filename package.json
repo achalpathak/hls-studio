@@ -1,0 +1,34 @@
+{
+  "name": "hlsify",
+  "productName": "HLS Studio",
+  "author": "Achal Pathak",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "HLS Converter tool",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist-win": "electron-builder --win",
+    "dist-linux": "electron-builder --linux",
+    "dist-mac": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^26.1.0",
+    "electron-builder": "^24.6.3"
+  },
+  "build": {
+    "appId": "com.achalpathak.hlsstudio",
+    "productName": "HLS Studio",
+    "mac": {
+      "target": "dmg",
+      "icon": "images/logo.png"
+    }
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
+  },
+  "electronmon": {
+    "patterns": ["!output/**"]
+  }
+}

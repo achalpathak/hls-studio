@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HLS Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+    http-equiv="Content-Security-Policy"
+    content="script-src 'self' 'unsafe-inline'"
+  />  
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="materialize.css">
+    <script src="./js/materialize.js" defer></script>
+
+    
+    <script src="./js/renderer.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- LOGO -->
+  <div class="logo">
+    <label>
+      <img class="logoImg" src="../images/logo.png" width="400"/>
+    </label>
+  </div>
+
+  <div class="reset">
+      <a id="resetBtn" class="btn-floating btn-large waves-effect waves-light tooltipped blue darken-1" data-position="bottom" data-tooltip="Reset Everything"><i class="material-icons">replay</i></a>
+  </div>
+    <!-- INPUT FILE -->
+    <div class="row inputFileContainer">
+      <div class="file-input col s4">
+        <div class="btn waves-effect waves-light file-field input-field blue darken-1">Select Source File
+          <i class="material-icons left">cloud_upload</i>
+          <input id="inputVideo" type="file" accept="video/*">
+        </div>
+      </div>
+      <label class="inputFilePath mr-6 col s8">Input File : <label id="inputFileLabel">%empty%</label></label>
+    </div>
+  
+    <!-- OUTPUT FOLDER -->
+    <div class="row inputFileContainer">
+      <div class="file-input col s4">
+        <div class="btn waves-effect waves-light file-field input-field blue darken-1">Select Output Folder
+          <i class="material-icons left">folder</i>
+          <input id="outputFolder" type="file">
+        </div>
+      </div>
+      <label class="inputFilePath mr-6 col s8">Output Folder : <label id="outputLabel">%empty%</label></label>
+    </div>
+  
+  <!-- SELECT PRESETS -->
+  <div class="row presetsOption">
+      <h6 class="col s4">Select Presets</h6>
+      <div class="col s8 presetBox">
+        <div>
+          <label>
+            <input type="checkbox" class="filled-in" data-value="1080"  checked />
+            <span>1080P</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" class="filled-in" data-value="720" checked />
+            <span>720P</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" class="filled-in" data-value="480" checked />
+            <span>480P</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" class="filled-in" data-value="360" checked />
+            <span>360P</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" class="filled-in" data-value="240" checked />
+            <span>240P</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" class="filled-in" data-value="144" checked />
+            <span>144P</span>
+          </label>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- Encoding Settings -->
+  <div class="row encodingContainer">
+    <h6 class="col s4">Size Compression Settings</h6>
+    <div class="col s4">
+      <select id="compressionSelect" class="blue lighten-3">
+        <option value="no_comp" selected>No Compression [Default]</option>
+        <option value="low_comp">Low Compression</option>
+        <option value="med_comp">Medium Compression</option>
+        <option value="high_comp">High Compression</option>
+      </select>
+      <label>Size Compression Settings</label>
+    </div>
+    <div class="col s4">
+      <h6 class="">Multithreading</h6>
+      <div class="switch">
+        <label>
+          <input type="checkbox" id="threadingEnabledSwitch" checked>
+          <span class="lever  blue lighten-3"></span>
+        </label>
+      </div>
+      </div>
+  </div>
+
+  <!-- START ENCODING -->
+  <div class="row startButtonContainer">
+    <a id="startEncodingBtn" class="waves-effect waves-light btn-large blue darken-1"><i class="material-icons left">layers</i>Start Encoding</a>
+  </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="progressContainer">
+      <div class="progressDetails">
+        <h6>Progress : <span id="progressPercentage">0.00</span> %</h6>
+      </div>
+      <div class="progress grey darken-1">
+        <div id="progressBar" class="determinate smooth-width-transition blue darken-1" style="width: 0%; height: 100%"></div>
+      </div>
+    </div>
+</body>
+</html>
