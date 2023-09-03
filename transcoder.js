@@ -3,6 +3,18 @@ const spawn = require('child_process').spawn;
 let process;
 
 function encoder(argv, frameCallback){
+
+  // Command to check FFmpeg's version
+  const checkFFmpegCommand = 'ffmpeg -version';
+
+  exec(checkFFmpegCommand, (error, stdout, stderr) => {
+    if (error) {
+      console.error('FFmpeg not found in the PATH or local directory.');
+      console.error('Please install FFmpeg and ensure it is in the system PATH.');
+      process.exit(1); // Exit with an error code
+    }
+  });
+  
   //Inputs
   const presets = argv.presets
   const input_file = argv.input_file
