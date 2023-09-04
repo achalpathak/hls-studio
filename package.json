@@ -8,27 +8,20 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "pack": "electron-builder --dir",
-    "dist-win": "electron-builder --win",
-    "dist-linux": "electron-builder --linux",
-    "dist-mac": "electron-builder --mac"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/win/icon.ico --prune=true --out=release-builds --version-string.AchalPathak=CE --version-string.FileDescription=CE --version-string.ProductName=\"HLS Studio\"",    
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/linux/icon.png --prune=true --out=release-builds"
   },
   "devDependencies": {
     "electron": "^26.1.0",
-    "electron-builder": "^24.6.3"
-  },
-  "build": {
-    "appId": "com.achalpathak.hlsstudio",
-    "productName": "HLS Studio",
-    "mac": {
-      "target": "dmg",
-      "icon": "images/logo.png"
-    }
+    "electron-packager": "^17.1.2"
   },
   "dependencies": {
     "yargs": "^17.7.2"
   },
   "electronmon": {
-    "patterns": ["!output/**"]
+    "patterns": [
+      "!output/**"
+    ]
   }
 }

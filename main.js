@@ -82,6 +82,7 @@ app.on('window-all-closed', () => {
 //Failed message
 //Folder selection box resize and bring to front
 //Move font locally
+//Create project readme
 //Windows,Linux and Mac packaging
 //Trial functionality
 //Logging to a file.log (autocleanup) [OPTIONAL]
