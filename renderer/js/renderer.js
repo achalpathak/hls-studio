@@ -36,6 +36,8 @@ function resetAll(e){
     inputFileLabel.textContent = "%empty%"
     payload.inputFile = undefined
     
+    inputVideo.value = null;
+
     outputLabel.textContent = "%empty%";
     payload.outputFolder = undefined;
     

@@ -1,23 +1,27 @@
 const spawn = require('child_process').spawn;
 const exec = require('child_process').exec;
+const path = require('path');
 
 let process;
 
 function encoder(argv, frameCallback){
 
-  // Command to check FFmpeg's version
-  const checkFFmpegCommand = 'ffmpeg -version';
+  // // Command to check FFmpeg's version
+  // const checkFFmpegCommand = 'ffmpeg -version';
 
-  exec(checkFFmpegCommand, (error, stdout, stderr) => {
-    if (error) {
-      console.error('FFmpeg not found in the PATH or local directory.');
-      console.error('Please install FFmpeg and ensure it is in the system PATH.');
-      process.exit(1); // Exit with an error code
-    }
-  });
+  // exec(checkFFmpegCommand, (error, stdout, stderr) => {
+  //   if (error) {
+  //     console.error('FFmpeg not found in the PATH or local directory.');
+  //     console.error('Please install FFmpeg and ensure it is in the system PATH.');
+  //     // process.exit(1); // Exit with an error code
+  //   }
+  // });
+  const ffmpegPath = path.join(__dirname, 'ffmpeg');
+
   
   //Inputs
-  const presets = argv.presets
+  // const presets = argv.presets
+  const presets = [240,144]
   const input_file = argv.input_file
   const output_folder = argv.output_folder
   const enable_multithreading = argv.threading ? '0' : '1';
@@ -69,7 +73,7 @@ function encoder(argv, frameCallback){
   '-i', input_file, '-map', '0:v:0', '-c','copy', '-f', 'null', '-'
   ]
   
-  const processTotalFrame = spawn('ffmpeg', preCommandArgs )
+  const processTotalFrame = spawn(ffmpegPath, preCommandArgs )
   
   let totalFrameCount = 0; // Initialize frame count
   processTotalFrame.stderr.on('data', data => {
@@ -87,7 +91,7 @@ function encoder(argv, frameCallback){
   
 
   
-  process = spawn('ffmpeg', ffmpegArgs);
+  process = spawn(ffmpegPath, ffmpegArgs);
   
   process.stderr.on('data', data => {
   

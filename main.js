@@ -2,8 +2,8 @@ const path = require('path');
 const {app, BrowserWindow, Menu,dialog,ipcMain} = require('electron');
 const {encoder, killTranscodingProcess} = require('./transcoder');
 const isMac = process.platform === 'darwin';
-const isDev = process.env.NODE_ENV !== 'development';
-// const isDev = false;
+// const isDev = process.env.NODE_ENV !== 'development';
+const isDev = false;
 
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
