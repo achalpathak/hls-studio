@@ -20,8 +20,25 @@ color: white;
 .logo{
   padding: 1rem 0;
   align-self: center;
+  display: flex;
 }
+.logo > div{
+  text-align: center;
+  color: #2196F3;
+}
+.logoHeading{
+  margin: 0;
+  color: #2196F3;
+  letter-spacing: 10px;
 
+}
+.logoSubHeading{
+  margin: 0;
+  color: #2196F3;
+  letter-spacing: 5px;
+
+
+}
 .logoImg{
   -webkit-user-drag: none;
 }

@@ -1,22 +1,16 @@
 const spawn = require('child_process').spawn;
 const exec = require('child_process').exec;
 const path = require('path');
+// var appRootDir = require('app-root-dir').get();
+const {execPath} = require('./binaries');
 
 let process;
 
 function encoder(argv, frameCallback){
+  
+  const ffmpegPath = execPath
+  console.log(ffmpegPath);
 
-  // // Command to check FFmpeg's version
-  // const checkFFmpegCommand = 'ffmpeg -version';
-
-  // exec(checkFFmpegCommand, (error, stdout, stderr) => {
-  //   if (error) {
-  //     console.error('FFmpeg not found in the PATH or local directory.');
-  //     console.error('Please install FFmpeg and ensure it is in the system PATH.');
-  //     // process.exit(1); // Exit with an error code
-  //   }
-  // });
-  const ffmpegPath = path.join(__dirname, 'ffmpeg');
 
   
   //Inputs
@@ -119,5 +113,6 @@ function killTranscodingProcess() {
     process = null; // Clear the reference
   }
 }
+
 
 module.exports = {encoder, killTranscodingProcess};

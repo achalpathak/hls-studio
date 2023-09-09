@@ -8,19 +8,48 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/win/icon.ico --prune=true --out=release-builds --version-string.AchalPathak=CE --version-string.FileDescription=CE --version-string.ProductName=\"HLS Studio\"",    
-    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/linux/icon.png --prune=true --out=release-builds"
+    "package-mac": "electron-builder --mac",
+    "package-win": "electron-builder --win",
+    "package-linux": "electron-builder --linux"
   },
   "devDependencies": {
     "electron": "^26.1.0",
-    "electron-packager": "^17.1.2"
+    "electron-builder": "^24.6.4"
   },
   "dependencies": {
+    "app-root-dir": "^1.0.2",
+    "electron-is-packaged": "^1.0.2",
+    "electron-root-path": "^1.1.0",
     "yargs": "^17.7.2"
   },
   "build": {
-    "compression": "maximum"
+    "mac": {
+      "icon": "assets/mac/icon.icns",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "icon": "assets/win/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "icon": "assets/linux/icon.png",
+      "target": [
+        "deb"
+      ]
+    },
+    "extraFiles": [
+      {
+        "from": "external/ffmpeg",
+        "to": "Resources/ffmpeg",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
   },
   "electronmon": {
     "patterns": [
