@@ -4,14 +4,14 @@ HLS Studio is a powerful video processing tool built using Electron.js. It allow
 
 ![HLS Studio Logo](images/icon.png)
 
-## Features
+## ✨ Features
 
 - Convert videos to HLS playlists with ease.
 - Multiple preset options for different video qualities.
 - Multithreading support for faster processing.
 - Intuitive user interface for a smooth user experience.
 
-## Screenshots
+## 🚀 Screenshots
 
 <!-- Add screenshots of your application in action here -->
 ![Screenshot 1](images/pic1.png)
@@ -19,7 +19,7 @@ HLS Studio is a powerful video processing tool built using Electron.js. It allow
 ![Screenshot 3](images/pic3.png)
 ![Screenshot 4](images/pic4.png)
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 **Client:** ElectronJS, Materialize CSS
 
