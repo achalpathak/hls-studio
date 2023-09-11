@@ -1,7 +1,7 @@
 {
-  "name": "hlsify",
+  "name": "hls_studio",
   "productName": "HLS Studio",
-  "author": "Achal Pathak",
+  "author": "Achal Pathak <pathak.achal5@gmail.com>",
   "license": "ISC",
   "version": "1.0.0",
   "description": "HLS Converter tool",
@@ -33,12 +33,14 @@
       "icon": "assets/win/icon.ico",
       "target": [
         "nsis"
-      ]
+      ],
+      "compression": "maximum"
     },
     "linux": {
       "icon": "assets/linux/icon.png",
       "target": [
-        "deb"
+        "AppImage",
+        "snap"
       ]
     },
     "extraFiles": [
